@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#FAEEE0"
-    tools:context=".Gu">
+    tools:context=".GuessNumberInGame">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
