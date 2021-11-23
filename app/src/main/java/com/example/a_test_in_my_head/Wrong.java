@@ -17,10 +17,10 @@ public class Wrong extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_timeout);
-        requestWindowFeature( Window.FEATURE_NO_TITLE );
+        setContentView(R.layout.activity_wrong);
+        //requestWindowFeature( Window.FEATURE_NO_TITLE );
 
-        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         RetryBtn = (Button) findViewById(R.id.RetryBtn);
         BackBtn = (Button) findViewById(R.id.BackBtn);
 
@@ -30,11 +30,13 @@ public class Wrong extends AppCompatActivity {
 
     public void Back(View v){
         Intent intent = new Intent(Wrong.this,MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
     public void Retry(View v){
         Intent intent = new Intent(Wrong.this,GuessNumberMain.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 

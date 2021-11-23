@@ -30,14 +30,24 @@ public class NBackMain extends AppCompatActivity {
             }
         });
 
+        Button button2 = (Button) findViewById(R.id.practiceBtn);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myintent2 = new Intent(NBackMain.this,NBackPracticeGameSetting.class);
+                startActivity(myintent2);
+            }
+        });
+
+
     }
 
 
 
-    public void onClickTest(View view) {
-        Intent intent3 = new Intent(this,NBackPracticeGameSetting.class);
+/*    public void onClickTest(View view) {
+        Intent intent3 = new Intent(NBackMain.this,NBackPracticeGameSetting.class);
         startActivity(intent3);
-    }
+    }*/
 
 /*
     public void onClickLevelTest(View v){

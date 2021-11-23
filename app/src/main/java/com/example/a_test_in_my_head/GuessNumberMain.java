@@ -22,9 +22,11 @@ public class GuessNumberMain extends AppCompatActivity {
     TextView timer; // 타이머 textView
     int value; // 타이머 숫자 표시
     int i;
+    Button easyButton, hardButton;
+    Intent easyIntent, hardIntent;
     private long backKeyPressedTime = 0;
 
-    @Override
+/*    @Override
     public void onBackPressed() {
         if(System.currentTimeMillis()>backKeyPressedTime+2000){
             backKeyPressedTime=System.currentTimeMillis();
@@ -36,53 +38,44 @@ public class GuessNumberMain extends AppCompatActivity {
             System.runFinalization();
             System.exit(0);
         }
-    }
-    /*    @Override
-        public void onBackPressed() {
-            if(System.currentTimeMillis()>backKeyPressedTime+2000){
-                backKeyPressedTime=System.currentTimeMillis();
-                Toast.makeText(this,"뒤로가기 버튼을 한번 더 누르시면 return home!",Toast.LENGTH_SHORT).show();
-                return;
+    }*/
+    @Override
+    public void onBackPressed() {
+        if(System.currentTimeMillis()>backKeyPressedTime+2000){
+            backKeyPressedTime=System.currentTimeMillis();
+            Toast.makeText(this,"뒤로가기 버튼을 한번 더 누르시면 return home!",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(System.currentTimeMillis()<=backKeyPressedTime+2000){
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
             }
-            if(System.currentTimeMillis()<=backKeyPressedTime+2000){
-                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                    finish();
-                }
 
-        }*/
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guess_number_main);
-        // 타이머
-        timer = (TextView) findViewById(R.id.countDown);
-        value = 0;
-        new Thread(new Runnable() {
+        easyIntent = new Intent(this, GuessNumberInGame.class);
+        hardIntent = new Intent(this, GuessNumberInGameHard.class);
+        easyButton = (Button)findViewById(R.id.easyLevel);
+        hardButton = (Button)findViewById(R.id.hardLevel);
+        easyButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
-                // 5초 카운트 다운
-                for(i = 5; i >= 0; i--){
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    value = i;
-                    GuessNumberMain.this.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            timer.setText(String.valueOf(value));
-                            if(value == 0){
-                                Intent intent = new Intent(GuessNumberMain.this, GuessNumberInGame.class);
-                                startActivity(intent);
-                            }
-                        }
-                    });
-                }
+            public void onClick(View view) {
+                // easy모드로 이동.
+                startActivity(easyIntent);
             }
-        }).start();
+        });
+        hardButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // hard 모드로 이동.
+                startActivity(hardIntent);
+            }
+        });
 
     }
 }

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.A_test_in_my_head">
         <activity
+            android:name=".GuessNumberInGameHard"
+            android:exported="true" />
+        <activity
             android:name=".NBack"
             android:exported="true" />
         <activity
