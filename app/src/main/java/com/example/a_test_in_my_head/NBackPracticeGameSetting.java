@@ -26,7 +26,7 @@ public class NBackPracticeGameSetting extends AppCompatActivity {
     }
 
     public void onClickStartPractice(View v){
-        Intent intent = new Intent(this, NBackGame.class);
+        Intent intent = new Intent(NBackPracticeGameSetting.this, NBackGame.class);
         intent.putExtra("mode", false);                                   // mode = false 은 연습 모드
         intent.putExtra("n", n);
         intent.putExtra("examLength", examLength);

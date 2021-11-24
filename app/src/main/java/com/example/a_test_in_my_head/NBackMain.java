@@ -21,7 +21,7 @@ public class NBackMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nback_main);
 
-        Button button1 = (Button) findViewById(R.id.levelTestBtn);
+/*        Button button1 = (Button) findViewById(R.id.levelTestBtn);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,7 +37,7 @@ public class NBackMain extends AppCompatActivity {
                 Intent myintent2 = new Intent(NBackMain.this,NBackPracticeGameSetting.class);
                 startActivity(myintent2);
             }
-        });
+        });*/
 
 
     }
@@ -49,14 +49,15 @@ public class NBackMain extends AppCompatActivity {
         startActivity(intent3);
     }*/
 
-/*
+
     public void onClickLevelTest(View v){
         Intent intent = new Intent(this, NBackGame.class);
         startActivity(intent);
     }
 
-    public void onClickPractice(View v){
+    public void onClickPractice(View v) {
         Intent intent = new Intent(this, NBackPracticeGameSetting.class);
         startActivity(intent);
-    }*/
+    }
+
 }

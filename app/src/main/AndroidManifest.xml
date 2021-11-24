@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.A_test_in_my_head">
         <activity
+            android:name=".DWDMHelp"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity2"
+            android:exported="true" />
+        <activity
+            android:name=".NBackHelp"
+            android:exported="true" />
+        <activity
+            android:name=".GuessNumberHelp"
+            android:exported="true" />
+        <activity
             android:name=".GuessNumberInGameHard"
             android:exported="true" />
         <activity

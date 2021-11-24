@@ -89,5 +89,39 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    public void onClickGuessHint(View view){
+        Intent intent3 = new Intent(MainActivity.this,GuessNumberHelp.class);
+        startActivity(intent3);
+        finish();
+/*        if(view==alert){ //view가 alert 이면 팝업실행 즉 버튼을 누르면 팝업창이 뜨는 조건
+            Context mContext = getApplicationContext();
+            LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(LAYOUT_INFLATER_SERVICE);
+
+            View layout = inflater.inflate(R.layout.dialog,(ViewGroup) findViewById(R.id.popup));
+            android.app.AlertDialog.Builder aDialog = new android.app.AlertDialog.Builder(MainActivity.this);
+            aDialog.setTitle("히든스탯 목록"); //타이틀바 제목
+            aDialog.setView(layout); //dialog.xml 파일을 뷰로 셋팅
+            aDialog.setNegativeButton("닫기", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                }
+            });
+            android.app.AlertDialog ad = aDialog.create();
+
+            ad.show();//보여줌!*/
+    }
+    public void onClickDWDMHelp(View view){
+        Intent intent3 = new Intent(MainActivity.this,DWDMHelp.class);
+        startActivity(intent3);
+        finish();
+
+    }
+    public void onClickNBackHelp(View view){
+        Intent intent3 = new Intent(MainActivity.this,DWDMHelp.class);
+        startActivity(intent3);
+        finish();
+
+    }
+
+
 
 }

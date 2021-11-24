@@ -21,6 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:onClick="onClickLevelTest"
         android:text="레벨 테스트!"
         android:textSize="30sp"
         android:visibility="visible" />
@@ -29,7 +30,8 @@
         android:id="@+id/practiceBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="onClickTest"
+        android:layout_gravity="center"
+        android:onClick="onClickPractice"
         android:text="연습하기"
         android:textSize="30sp"
         android:visibility="visible" />

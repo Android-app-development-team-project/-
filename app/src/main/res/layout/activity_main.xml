@@ -41,6 +41,7 @@
                 android:id="@+id/geussnumberhelp"
                 android:layout_width="115dp"
                 android:layout_height="wrap_content"
+                android:onClick="onClickGuessHint"
                 android:text="게임 도움말" />
         </LinearLayout>
 
@@ -62,6 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="onClickNBackHelp"
                 android:text="게임 도움말" />
         </LinearLayout>
 
@@ -82,6 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="onClickDWDMHelp"
                 android:text="게임 도움말" />
         </LinearLayout>
     </LinearLayout>
